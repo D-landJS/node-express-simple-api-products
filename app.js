@@ -14,6 +14,8 @@ app.use(morgan('dev'));
 
 app.use('/api/products', require('./routes/product'));
 
-app.listen(4000, () => {
-	console.log('El servidor esta corriendo perfectamente');
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+	console.log('Ando corriendo en el puerto ', port);
 });
